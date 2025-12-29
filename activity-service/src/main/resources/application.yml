@@ -4,13 +4,13 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/aiacticityfitness
-      database: aiacticityfitness
+      uri: ${MONGODB_URI}
+      database: ${MONGODB_DATABASE}
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_URL}
 
 server:
   port: 8082
