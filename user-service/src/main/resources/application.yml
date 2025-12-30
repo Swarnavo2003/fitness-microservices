@@ -18,6 +18,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URL}
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
 
 server:
   port: 8081
