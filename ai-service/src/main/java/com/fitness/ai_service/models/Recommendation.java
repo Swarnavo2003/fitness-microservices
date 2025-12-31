@@ -1,7 +1,9 @@
 package com.fitness.ai_service.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -13,10 +15,13 @@ import java.util.List;
 @Document(collection = "recommendations")
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Recommendation {
     @Id
     private String id;
     private String activityId;
+    private String type;
     private String userId;
     private String recommendation;
     private List<String> improvements;
