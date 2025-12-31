@@ -1,0 +1,26 @@
+spring:
+  data:
+    mongodb:
+      uri: ${ACTIVITY_MONGODB_URI}
+      database: ${ACTIVITY_MONGODB_DATABASE}
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+kafka:
+  topic:
+    name: activity-events
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL}
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+
+server:
+  port: 8082
